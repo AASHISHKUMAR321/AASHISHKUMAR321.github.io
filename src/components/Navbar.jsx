@@ -56,7 +56,7 @@ export const Navbar = () => {
                 <BreadcrumbLink
                   as={Link}
                   to={e.to}
-                  _hover={{ color: "orange" }}
+                  _hover={{ color: "#64ffda" }}
                 >
                   {e.name}
                 </BreadcrumbLink>

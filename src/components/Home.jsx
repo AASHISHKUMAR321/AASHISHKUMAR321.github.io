@@ -1,10 +1,23 @@
-import { Box, Center, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  Button,
+  HStack,
+} from "@chakra-ui/react";
 import React from "react";
 import profile from "../assets/profile.png";
+import Typist from "react-typist";
+import "react-typist/dist/Typist.css";
+import FractalTree from "./FractalTree";
+import { EmailIcon, Icon } from "@chakra-ui/icons";
 export const Home = () => {
   return (
     <Center>
-      <Box mt={10}>
+      <Box mt={20}>
         <Flex
           w={"100%"}
           justifyContent={"center"}
@@ -13,27 +26,65 @@ export const Home = () => {
         >
           <Box>
             <Center>
-              <Image src={profile} />
+              {/* <Image src={profile} /> */}
+
+              <FractalTree />
             </Center>
           </Box>
 
           <Box
-            w={["70%", "70%", "50%"]}
+            w={["70%", "80%", "50%"]}
             justifyContent={"center"}
-            border={1}
+            alignContent={"center"}
             borderColor={"red"}
-            margin={["auto", "auto", "40px", "70px"]}
+            margin={["auto", "auto", "100px", "170px"]}
           >
-            <Heading>Hy! I Am </Heading>
+            <Box>
+              <Typist avgTypingDelay={120}>
+                <span
+                  className="intro-title"
+                  style={{
+                    fontSize: "50px",
+                    fontWeight: "bold",
+                    fontFamily: "sans-serif",
+                    textAlign: "center",
+                  }}
+                >
+                  {"hi,"}
+                  <span className="intro-name" style={{ color: "#64ffda" }}>
+                    {"Aashish"}
+                  </span>
+                  {" here."}
+                </span>
+              </Typist>
 
-            <Heading color={"orange"}>Aashish Kumar</Heading>
-            <Text fontSize={"xl"} textAlign={"justify"}>
-              A passionate Skilled and result-oriented full-stack Web developer
+              <Text fontSize={"xl"} textAlign={"justify"}>
+                {/* A passionate Skilled and result-oriented full-stack Web developer
               with an expertise in MERN stack. Focused and curious, with a keen
-              interest in building creative web applications
-            </Text>
+              interest in building creative web applications */}
+                I'm a Instructional Associate at Masai. I have great interest in
+                full-stack development, human-computer interactions, and
+                everything in between.
+              </Text>
+            </Box>
           </Box>
         </Flex>
+        <HStack w={"80%"} margin={"auto"}>
+          <Button
+            color={"#64ffda"}
+            fontSize={30}
+            fontWeight={"bold"}
+            bgColor={"transparent"}
+            border={"0.1px solid white"}
+            borderRadius={7}
+            p={8}
+            _hover={{ bg: "white" }}
+            mt={[5, 0]}
+          >
+            <EmailIcon />
+            {"  " + "Say hi!"}
+          </Button>
+        </HStack>
       </Box>
     </Center>
   );
