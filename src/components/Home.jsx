@@ -8,15 +8,15 @@ import {
   Button,
   HStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { forwardRef } from "react";
 import profile from "../assets/profile.png";
 import Typist from "react-typist";
 import "react-typist/dist/Typist.css";
 import FractalTree from "./FractalTree";
 import { EmailIcon, Icon } from "@chakra-ui/icons";
-export const Home = () => {
+export const Home = forwardRef((props, ref) => {
   return (
-    <Center>
+    <Center ref={ref} style={{ backgroundColor: "#0a192f", color: "white" }}>
       <Box mt={20}>
         <Flex
           w={"100%"}
@@ -37,14 +37,14 @@ export const Home = () => {
             justifyContent={"center"}
             alignContent={"center"}
             borderColor={"red"}
-            margin={["auto", "auto", "100px", "170px"]}
+            margin={["auto", "auto", "80px", "130px"]}
           >
             <Box>
               <Typist avgTypingDelay={120}>
                 <span
                   className="intro-title"
                   style={{
-                    fontSize: "50px",
+                    fontSize: "40px",
                     fontWeight: "bold",
                     fontFamily: "sans-serif",
                     textAlign: "center",
@@ -69,7 +69,7 @@ export const Home = () => {
             </Box>
           </Box>
         </Flex>
-        <HStack w={"80%"} margin={"auto"}>
+        <HStack w={["70%", "80%"]} margin={"auto"}>
           <Button
             color={"#64ffda"}
             fontSize={30}
@@ -79,7 +79,7 @@ export const Home = () => {
             borderRadius={7}
             p={8}
             _hover={{ bg: "white" }}
-            mt={[5, 0]}
+            mt={[0, 10]}
           >
             <EmailIcon />
             {"  " + "Say hi!"}
@@ -88,4 +88,4 @@ export const Home = () => {
       </Box>
     </Center>
   );
-};
+});

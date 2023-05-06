@@ -5,6 +5,8 @@ import { Contact } from "./Contact";
 import { Education } from "./Education";
 import { Home } from "./Home";
 import { Skills } from "./Skills";
+import { Box } from "@chakra-ui/react";
+
 export const AllRoutes = () => {
   return (
     <Routes>
@@ -14,6 +16,8 @@ export const AllRoutes = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/skills" element={<Skills />} />
       <Route path="/resume" element={"#"} />
+
+      {/* <Box>{Navbar()}</Box> */}
     </Routes>
   );
 };

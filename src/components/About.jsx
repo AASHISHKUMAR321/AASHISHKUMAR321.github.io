@@ -1,5 +1,10 @@
-import React from "react";
+import { Box } from "@chakra-ui/react";
+import React, { forwardRef } from "react";
 
-export const About = () => {
-  return <div>About</div>;
-};
+export const About = forwardRef((props, ref) => {
+  return (
+    <Box ref={ref} height={"300px"} bg={"black"}>
+      About
+    </Box>
+  );
+});
